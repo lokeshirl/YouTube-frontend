@@ -8,7 +8,7 @@ import {
 
 const Header = () => {
   return (
-    <header className="h-full py-3 w-full flex items-center justify-between">
+    <header className="px-3 py-3 w-full flex items-center justify-between">
       <div className="flex items-center gap-5">
         <Bars3Icon class="h-7 w-7" />
         <img
@@ -33,7 +33,9 @@ const Header = () => {
         </button>
         <button className="relative">
           <BellIcon className="w-7 h-7" />
-          <span className="absolute px-1 bg-red-600 rounded-full text-white text-xs top-0">2</span>
+          <span className="absolute px-1 bg-red-600 rounded-full text-white text-xs top-0">
+            2
+          </span>
         </button>
         <button>
           <UserCircleIcon className="w-7 h-7" />

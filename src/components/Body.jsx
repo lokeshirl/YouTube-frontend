@@ -1,12 +1,12 @@
-import NavigationSection from "./NavigationSection.jsx";
+import Sidebar from "./Sidebar.jsx";
 import VideoList from "./VideoList.jsx";
 
 const Body = () => {
   return (
-    <>
-      <NavigationSection />
+    <div className="flex w-full">
+      <Sidebar />
       <VideoList />
-    </>
+    </div>
   );
 };
 
