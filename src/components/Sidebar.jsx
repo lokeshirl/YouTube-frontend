@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   FireIcon,
   HomeIcon,
@@ -10,6 +11,7 @@ import {
   MusicalNoteIcon,
   SignalIcon,
 } from "@heroicons/react/24/outline";
+import { useSelector } from "react-redux";
 
 const SidebarNavList = ({ navTitle, navIcon }) => {
   return (
@@ -23,8 +25,10 @@ const SidebarNavList = ({ navTitle, navIcon }) => {
 };
 
 const Sidebar = () => {
+  const { isMenuOpen } = useSelector((state) => state.app);
+
   return (
-    <div className="w-40">
+    <div className={`${isMenuOpen ? "hidden md:block" : "md:hidden"}`}>
       <nav>
         <ul>
           <SidebarNavList
