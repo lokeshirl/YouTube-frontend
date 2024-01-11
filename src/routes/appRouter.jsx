@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App.jsx";
 import Body from "../components/Body.jsx";
 import VideoList from "../components/VideoList.jsx";
+import WatchPage from "../components/WatchPage.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const appRouter = createBrowserRouter([
           {
             path: "/",
             element: <VideoList />,
+          },
+          {
+            path: "watch",
+            element: <WatchPage />,
           },
         ],
       },

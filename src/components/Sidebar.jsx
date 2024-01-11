@@ -11,16 +11,16 @@ import {
   MusicalNoteIcon,
   SignalIcon,
 } from "@heroicons/react/24/outline";
+
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const SidebarNavList = ({ navTitle, navIcon }) => {
   return (
-    <li>
-      <div className="flex items-center justify-start gap-2 py-2 px-3 cursor-pointer hover:bg-slate-100 rounded-md">
-        {navIcon}
-        <span className="text-sm">{navTitle}</span>
-      </div>
-    </li>
+    <div className="flex items-center justify-start gap-2 py-2 px-3 cursor-pointer hover:bg-slate-100 rounded-md">
+      {navIcon}
+      <span className="text-sm">{navTitle}</span>
+    </div>
   );
 };
 
@@ -31,18 +31,30 @@ const Sidebar = () => {
     <div className={`${isMenuOpen ? "hidden md:block" : "md:hidden"}`}>
       <nav>
         <ul>
-          <SidebarNavList
-            navIcon={<HomeIcon className="w-7 h-7" />}
-            navTitle="Home"
-          />
-          <SidebarNavList
-            navIcon={<FireIcon className="w-7 h-7" />}
-            navTitle="Explore"
-          />
-          <SidebarNavList
-            navIcon={<PlayCircleIcon className="w-7 h-7" />}
-            navTitle="Subscriptions"
-          />
+          <li>
+            <Link to="/">
+              <SidebarNavList
+                navIcon={<HomeIcon className="w-7 h-7" />}
+                navTitle="Home"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link to="/explore">
+              <SidebarNavList
+                navIcon={<FireIcon className="w-7 h-7" />}
+                navTitle="Explore"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link to="/subscriptions">
+              <SidebarNavList
+                navIcon={<PlayCircleIcon className="w-7 h-7" />}
+                navTitle="Subscriptions"
+              />
+            </Link>
+          </li>
         </ul>
         <hr className="my-2 border-t border-t-slate-300" />
         <ul>
@@ -50,18 +62,30 @@ const Sidebar = () => {
             <span className="text-md font-bold">You</span>
             <ChevronRightIcon className="w-4 h-4" />
           </li>
-          <SidebarNavList
-            navIcon={<ClockIcon className="w-7 h-7" />}
-            navTitle="History"
-          />
-          <SidebarNavList
-            navIcon={<BookmarkIcon className="w-7 h-7" />}
-            navTitle="Watch later"
-          />
-          <SidebarNavList
-            navIcon={<FilmIcon className="w-7 h-7" />}
-            navTitle="Playlist"
-          />
+          <li>
+            <Link to="/history">
+              <SidebarNavList
+                navIcon={<ClockIcon className="w-7 h-7" />}
+                navTitle="History"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link to="/watch-later">
+              <SidebarNavList
+                navIcon={<BookmarkIcon className="w-7 h-7" />}
+                navTitle="Watch later"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link to="/playlist">
+              <SidebarNavList
+                navIcon={<FilmIcon className="w-7 h-7" />}
+                navTitle="Playlist"
+              />
+            </Link>
+          </li>
         </ul>
         <hr className="my-2 border-t border-t-slate-300" />
         <ul>
@@ -69,20 +93,33 @@ const Sidebar = () => {
             <span className="text-md font-bold">Explore</span>
             <ChevronRightIcon className="w-4 h-4" />
           </li>
-          <SidebarNavList
-            navIcon={<ArrowTrendingUpIcon className="w-7 h-7" />}
-            navTitle="Trending"
-          />
-          <SidebarNavList
-            navIcon={<MusicalNoteIcon className="w-7 h-7" />}
-            navTitle="Music"
-          />
-          <SidebarNavList
-            navIcon={<SignalIcon className="w-7 h-7" />}
-            navTitle="Live"
-          />
+          <li>
+            <Link to="/trending">
+              <SidebarNavList
+                navIcon={<ArrowTrendingUpIcon className="w-7 h-7" />}
+                navTitle="Trending"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link to="/music">
+              <SidebarNavList
+                navIcon={<MusicalNoteIcon className="w-7 h-7" />}
+                navTitle="Music"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link to="/live">
+              <SidebarNavList
+                navIcon={<SignalIcon className="w-7 h-7" />}
+                navTitle="Live"
+              />
+            </Link>
+          </li>
         </ul>
       </nav>
+      ;
     </div>
   );
 };

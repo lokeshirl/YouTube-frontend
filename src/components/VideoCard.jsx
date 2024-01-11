@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import { abbreviateNumber } from "../utils/helper.js";
+import { config_urls } from "../conf/config.js";
+import fetchDataFromApi from "../utils/api.js";
 
 const getImage = (thumbnail) => {
   const sizes = ["maxres", "medium", "standard", "high", "default"];
@@ -14,16 +17,24 @@ const getImage = (thumbnail) => {
 };
 
 const VideoCard = ({ info }) => {
-  const title = info?.snippet?.title;
-  const channelTitle = info?.snippet?.channelTitle;
   const viewCount = info?.statistics?.viewCount;
+  const { channelTitle, channelId, title, thumbnails } = info?.snippet;
+  const imageURL = getImage(thumbnails);
 
-  const thumbnail = info?.snippet?.thumbnails;
-  const imageURL = getImage(thumbnail);
+  /* get channel Image
+  const [channelImage, setChannelImage] = useState("");
+  useEffect(() => {
+    fetchDataFromApi(config_urls.YOUTUBE_CHANNEL_DETAILS_URL + channelId)
+      .then((data) => {
+        const url = data?.items[0]?.snippet?.thumbnails?.high?.url;
+        setChannelImage(url);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+ */
 
   const channelImage =
     "https://yt3.googleusercontent.com/ytc/AIf8zZRr-XxwSuOW9kwN9wXTxhmT-I3A1dhcYKmiBz4h9g=s176-c-k-c0x00ffffff-no-rj";
-
   return (
     <div className="flex flex-col m-2 w-[312px] h-[300px] hover:bg-gray-50 rounded-lg">
       {/* Main Image - Thumbnail*/}
