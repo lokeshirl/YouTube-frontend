@@ -25,14 +25,14 @@ const WatchPageVideoDescription = ({ videoId, videoDetailsData }) => {
     videoDetailsData?.items?.[0]?.statistics || {};
 
   const [channelImage, setChannelImage] = useState("");
-  useEffect(() => {
-    fetchDataFromApi(config_urls.YOUTUBE_CHANNEL_DETAILS_URL + channelId)
-      .then((data) => {
-        const url = data?.items[0]?.snippet?.thumbnails?.high?.url;
-        setChannelImage(url);
-      })
-      .catch((err) => console.log(err));
-  }, [channelId]);
+  // useEffect(() => {
+  //   fetchDataFromApi(config_urls.YOUTUBE_CHANNEL_DETAILS_URL + channelId)
+  //     .then((data) => {
+  //       const url = data?.items[0]?.snippet?.thumbnails?.high?.url;
+  //       setChannelImage(url);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, [channelId]);
 
   return (
     <div className="flex flex-col w-full">

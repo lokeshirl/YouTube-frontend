@@ -8,9 +8,11 @@ const WatchPage = () => {
   const [URLsearchParams] = useSearchParams();
   const videoId = URLsearchParams.get("v");
 
-  const videoDetailsData = useFetch(
-    config_urls.YOUTUBE_VIDEO_DETAILS_URL + videoId
-  );
+  // const videoDetailsData = useFetch(
+  //   config_urls.YOUTUBE_VIDEO_DETAILS_URL + videoId
+  // );
+
+  const videoDetailsData = undefined;
 
   const channelId = videoDetailsData?.items?.[0]?.snippet?.channelId;
 

@@ -18,4 +18,5 @@ export const config_urls = {
   YOUTUBE_CHANNEL_DETAILS_URL: `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&key=${
     import.meta.env.VITE_YOUTUBE_API_KEY
   }&id=`,
+  YOUTUBE_SEARCH_AUTOCOMPLETE_URL: `https://clients1.google.com/complete/search?client=youtube&gs_ri=youtube&ds=yt&q=`,
 };

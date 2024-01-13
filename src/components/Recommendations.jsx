@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { config_urls } from "../conf/config.js";
-import useFetch from "../hook/useFetch.js";
 import useRecommendations from "../hook/useRecommendations.js";
 import ReccommendationVideoCard from "./ReccommendationVideoCard.jsx";
 import { Link } from "react-router-dom";
