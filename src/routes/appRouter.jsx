@@ -3,6 +3,7 @@ import App from "../App.jsx";
 import Body from "../components/Body.jsx";
 import VideoList from "../components/VideoList.jsx";
 import WatchPage from "../components/WatchPage.jsx";
+import Comments from "../components/Comments.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const appRouter = createBrowserRouter([
           {
             path: "watch",
             element: <WatchPage />,
+          },
+          {
+            path: "comments",
+            element: <Comments />,
           },
         ],
       },

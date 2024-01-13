@@ -1,3 +1,79 @@
+export const nestedComments = [
+  {
+    id: 1,
+    user: "Aarav",
+    text: "Great post! I enjoyed reading it.",
+    replies: [
+      {
+        id: 2,
+        user: "Aanya",
+        text: "Thank you! I'm glad you liked it.",
+        replies: [
+          {
+            id: 5,
+            user: "Aarav",
+            text: "Any recommendations for further reading on this topic?",
+            replies: [
+              {
+                id: 8,
+                user: "Aanya",
+                text: "Sure! You might find 'Advanced Topics in [Topic]' helpful.",
+                replies: [],
+              },
+            ],
+          },
+          {
+            id: 6,
+            user: "Aarav",
+            text: "I have a question about the third point in your post.",
+            replies: [
+              {
+                id: 9,
+                user: "Aanya",
+                text: "Feel free to ask! I'll do my best to clarify.",
+                replies: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 3,
+        user: "Arjun",
+        text: "Interesting perspective! Can you elaborate on the second point?",
+        replies: [
+          {
+            id: 10,
+            user: "Aarav",
+            text: "Certainly! The second point is about [details].",
+            replies: [
+              {
+                id: 11,
+                user: "Arjun",
+                text: "Got it! Thanks for explaining.",
+                replies: [],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    user: "Aanya",
+    text: "I disagree with your conclusion. Here's why...",
+    replies: [
+      {
+        id: 7,
+        user: "Aarav",
+        text: "Interesting counterpoint! I appreciate the different perspective.",
+        replies: [],
+      },
+    ],
+  },
+];
+
 export const test = [
   "namaste",
   [
