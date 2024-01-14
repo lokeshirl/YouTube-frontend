@@ -4,6 +4,7 @@ import Body from "../components/Body.jsx";
 import VideoList from "../components/VideoList.jsx";
 import WatchPage from "../components/WatchPage.jsx";
 import Comments from "../components/Comments.jsx";
+import LiveChat from "../components/LiveChat.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const appRouter = createBrowserRouter([
           {
             path: "comments",
             element: <Comments />,
+          },
+          {
+            path: "chat",
+            element: <LiveChat />,
           },
         ],
       },
